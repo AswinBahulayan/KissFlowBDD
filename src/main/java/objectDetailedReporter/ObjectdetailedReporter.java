@@ -20,7 +20,7 @@ public class ObjectdetailedReporter {
 	@BeforeSuite(groups = "common") // One time execution 
 	public void startResult() {
 		ExtentHtmlReporter html = new ExtentHtmlReporter
-				("./reports/result"+System.currentTimeMillis()+".html");
+				(System.getProperty("user.dir")+"/result"+System.currentTimeMillis()+".html");
 		html.setAppendExisting(true);
 		extent = new ExtentReports();
 		extent.attachReporter(html);
@@ -36,7 +36,7 @@ public class ObjectdetailedReporter {
 	public void reportStep(String desc,String status)  {
 		if (status.equalsIgnoreCase("pass")) {
 			test.pass(desc);
-			//test.addScreenCaptureFromPath(SeMethods.takeSnap());
+			//test.addScreenCaptureFromPath(Se.takeSnap());
 		}if (status.equalsIgnoreCase("fail")) {
 			test.fail(desc);
 		}

@@ -30,10 +30,10 @@ import objectDetailedReporter.ObjectdetailedReporter;
 public class SeleniumHelper extends ObjectdetailedReporter{
 	public int i = 1;
 	public static RemoteWebDriver driver;
-	public void startApp(String browser, String url) throws IOException {
+	public void startApp(String browser, String url)  {
 		try {
 			if(browser.equalsIgnoreCase("chrome")){
-				System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
 				driver = new ChromeDriver();
 			} else if (browser.equalsIgnoreCase("firefox")){
 				System.setProperty("webdriver.gecko.driver", "./drivers/geckodriver.exe");
